@@ -38,7 +38,7 @@ app.post('/shortenUrl', async (req, res) => {
     const fullUrl = req.body.fullUrl
 
     if (fullUrl === undefined) {
-        res.status(400).json({message : "Url is required", fullUrl: null, shortUrl : null})
+        res.status(400).json({message : "Url is mandatory", fullUrl: null, shortUrl : null})
     } else {
         try {
             const query = await urls.where("fullUrl", "==", fullUrl).get()
